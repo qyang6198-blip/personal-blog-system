@@ -1,0 +1,31 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "个人博客系统 - 基于 Node.js + Express + SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "backup": "node utils/backup.js",
+     "test": "node tests/database.test.js && node tests/model.test.js && node tests/xss.test.js && node tests/api.test.js && node tests/article-update.test.js && node tests/pagination.test.js && node tests/rss.test.js && node tests/sitemap.test.js && node tests/tag-page.test.js && node tests/category.test.js && node tests/search.test.js && node tests/uv.test.js && node tests/reading-time.test.js && node tests/user.test.js && node tests/jwt.test.js && node tests/rate-limit.test.js && node tests/backup.test.js && node tests/cache.test.js && node tests/media.test.js"
+  },
+  "keywords": [
+    "blog",
+    "nodejs",
+    "express"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dompurify": "^3.4.12",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "jsdom": "^29.1.1",
+    "jsonwebtoken": "^9.0.3",
+    "marked": "^18.0.6",
+    "multer": "^2.2.0"
+  },
+  "private": true,
+  "author": ""
+}

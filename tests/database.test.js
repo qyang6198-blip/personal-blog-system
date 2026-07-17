@@ -1,0 +1,8 @@
+const db = require("../database/database")
+const initDb = require("../database/init")
+initDb()
+var tables = db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name").all()
+var names = tables.map(function(t){return t.name})
+if (!names.includes("articles")) throw new Error("articles table missing")
+if (!names.includes("visits")) throw new Error("visits table missing")
+console.log("PASS: database.test.js")

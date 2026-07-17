@@ -1,0 +1,19 @@
+# Docker Compose 配置
+# 运行方式：docker compose up -d
+# 停止方式：docker compose down
+
+version: "3.8"
+
+services:
+  blog:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      # 管理员账号密码（部署前修改）
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-123456}
+    volumes:
+      # 数据持久化：SQLite 文件保存在宿主机
+      - ./data:/app/data
+    restart: unless-stopped

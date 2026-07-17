@@ -1,0 +1,9 @@
+ CREATE INDEX IF NOT EXISTS idx_articles_status ON articles(status);
+ CREATE INDEX IF NOT EXISTS idx_articles_created_at ON articles(created_at);
+ CREATE INDEX IF NOT EXISTS idx_articles_category_id ON articles(category_id);
+ CREATE INDEX IF NOT EXISTS idx_article_versions_article_id ON article_versions(article_id);
+ CREATE INDEX IF NOT EXISTS idx_article_versions_created_at ON article_versions(created_at);
+ CREATE INDEX IF NOT EXISTS idx_visits_created_at ON visits(created_at);
+ CREATE INDEX IF NOT EXISTS idx_visits_article_id ON visits(article_id);
+ CREATE INDEX IF NOT EXISTS idx_media_created_at ON media(created_at);
+ CREATE INDEX IF NOT EXISTS idx_media_mime_type ON media(mime_type);

@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment (local overrides)
+.env
+.env.local
+
+# Runtime database files
+data/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# Backup database files
+backup/*.sqlite
+backup/*.db
+
+# User uploaded files
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Application logs
+logs/
+logs/*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

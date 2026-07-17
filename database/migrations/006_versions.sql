@@ -1,0 +1,1 @@
+ CREATE TABLE IF NOT EXISTS article_versions (id INTEGER PRIMARY KEY AUTOINCREMENT, article_id INTEGER NOT NULL, title TEXT NOT NULL, content TEXT NOT NULL, summary TEXT, tags TEXT, category_id INTEGER, status TEXT DEFAULT 'draft', created_at DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (article_id) REFERENCES articles(id));

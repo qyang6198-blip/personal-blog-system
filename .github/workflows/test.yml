@@ -1,0 +1,45 @@
+# GitHub Actions CI 配置
+#
+# 每次 push 或 pull request 到 main 分支时自动运行测试。
+#
+# 流程：
+#   1. checkout 代码
+#   2. 安装 Node.js 24
+#   3. 安装依赖
+#   4. 运行测试
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [24]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+        env:
+          NODE_ENV: test
+          ADMIN_USERNAME: admin
+          ADMIN_PASSWORD: 123456
