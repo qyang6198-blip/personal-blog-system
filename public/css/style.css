@@ -1,5 +1,5 @@
-/* === 全局重置 === */
-/* 移除浏览器默认边距和内边距，统一盒模型 */
+﻿/* === 鍏ㄥ眬閲嶇疆 === */
+/* 绉婚櫎娴忚鍣ㄩ粯璁よ竟璺濆拰鍐呰竟璺濓紝缁熶竴鐩掓ā鍨?*/
 *,
 *::before,
 *::after {
@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 
-/* === CSS 变量 === */
-/* 定义全局颜色和间距，方便统一调整 */
+/* === CSS 鍙橀噺 === */
+/* 瀹氫箟鍏ㄥ眬棰滆壊鍜岄棿璺濓紝鏂逛究缁熶竴璋冩暣 */
 
 
 body {
@@ -23,15 +23,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* === 通用容器 === */
-/* 限制内容最大宽度，左右居中 */
+/* === 閫氱敤瀹瑰櫒 === */
+/* 闄愬埗鍐呭鏈€澶у搴︼紝宸﹀彸灞呬腑 */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 calc(var(--space-unit) * 3);
 }
 
-/* === 头部 === */
+/* === 澶撮儴 === */
 .header {
   border-bottom: 1px solid var(--border-color);
   padding: calc(var(--space-unit) * 3) 0;
@@ -66,7 +66,7 @@ body {
   color: var(--text-color);
 }
 
-/* === 页面标题 === */
+/* === 椤甸潰鏍囬 === */
 .page-title {
   font-size: 28px;
   font-weight: 700;
@@ -74,12 +74,12 @@ body {
   letter-spacing: -0.5px;
 }
 
-/* === 文章列表 === */
+/* === 鏂囩珷鍒楄〃 === */
 .articles {
   min-height: 200px;
 }
 
-/* 加载和提示文字 */
+/* 鍔犺浇鍜屾彁绀烘枃瀛?*/
 .loading,
 .empty,
 .error {
@@ -93,7 +93,7 @@ body {
   color: #c0392b;
 }
 
-/* === 文章卡片 === */
+/* === 鏂囩珷鍗＄墖 === */
 .article-card {
   padding: calc(var(--space-unit) * 4) 0;
   border-bottom: 1px solid var(--border-color);
@@ -134,14 +134,14 @@ body {
   font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.6;
-  /* 摘要最多显示 3 行，超出省略 */
+  /* 鎽樿鏈€澶氭樉绀?3 琛岋紝瓒呭嚭鐪佺暐 */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* === 响应式 === */
+/* === 鍝嶅簲寮?=== */
 @media (max-width: 640px) {
   .page-title {
     font-size: 24px;
@@ -153,7 +153,7 @@ body {
   }
 }
 
-/* === 文章详情页 === */
+/* === 鏂囩珷璇︽儏椤?=== */
 
 .article-detail {
   padding-top: 48px;
@@ -174,7 +174,7 @@ body {
   margin-bottom: 24px;
 }
 
-/* 标签列表 */
+/* 鏍囩鍒楄〃 */
 .tags {
   margin-bottom: 32px;
 }
@@ -190,7 +190,7 @@ body {
   margin-bottom: 6px;
 }
 
-/* 正文排版 */
+/* 姝ｆ枃鎺掔増 */
 .article-content {
   font-size: 17px;
   line-height: 1.8;
@@ -202,7 +202,7 @@ body {
   margin-bottom: 1.5em;
 }
 
-/* 返回首页链接 */
+/* 杩斿洖棣栭〉閾炬帴 */
 .back-link {
   display: inline-block;
   color: var(--text-secondary);
@@ -227,9 +227,9 @@ body {
   }
 }
 
-/* === 管理后台 === */
+/* === 绠＄悊鍚庡彴 === */
 
-/* 后台页面灰底，与阅读页面区分 */
+/* 鍚庡彴椤甸潰鐏板簳锛屼笌闃呰椤甸潰鍖哄垎 */
 .admin-page {
   background: var(--surface-color);
 }
@@ -238,7 +238,7 @@ body {
   padding-top: 8px;
 }
 
-/* 卡片容器 */
+/* 鍗＄墖瀹瑰櫒 */
 .admin-card {
   background: var(--surface-color);
   border: 1px solid var(--border-color);
@@ -259,7 +259,7 @@ body {
   font-weight: 600;
 }
 
-/* 表单样式 */
+/* 琛ㄥ崟鏍峰紡 */
 .admin-form .form-group {
   margin-bottom: 20px;
 }
@@ -299,7 +299,7 @@ body {
   line-height: 1.7;
 }
 
-/* 按钮样式 */
+/* 鎸夐挳鏍峰紡 */
 .btn {
   display: inline-block;
   padding: 10px 24px;
@@ -332,7 +332,7 @@ body {
   color: var(--text-color);
 }
 
-/* 提示消息 */
+/* 鎻愮ず娑堟伅 */
 .form-error {
   color: #c0392b;
   font-size: 14px;
@@ -355,7 +355,7 @@ body {
 }
 
 
-/* === 访问统计看板 === */
+/* === 璁块棶缁熻鐪嬫澘 === */
 
 .stats-total {
   font-size: 15px;
@@ -377,7 +377,7 @@ body {
 }
 
 
-/* === Markdown 文章排版 === */
+/* === Markdown 鏂囩珷鎺掔増 === */
 
 .article-content h1 {
   font-size: 28px;
@@ -449,7 +449,7 @@ body {
 }
 
 
-/* === 分页组件 === */
+/* === 鍒嗛〉缁勪欢 === */
 .pagination {
   display: flex;
   justify-content: center;
@@ -513,7 +513,7 @@ body {
 }
 
 
-/* === 标签微章 === */
+/* === 鏍囩寰珷 === */
 .article-tags {
   margin-top: 8px;
 }
@@ -533,7 +533,7 @@ body {
   color: var(--text-color);
 }
 
-/* === 标签云页面 === */
+/* === 鏍囩浜戦〉闈?=== */
 .tags-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -561,7 +561,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* === 分类微章 === */
+/* === 鍒嗙被寰珷 === */
 .article-category { margin: 4px 0; font-size: 13px; }
 .article-category a { color: var(--text-secondary); text-decoration: none; }
 .article-category a:hover { color: var(--text-color); text-decoration: underline; }
@@ -570,7 +570,7 @@ body {
 .admin-select { width:100%; padding:10px 14px; font-size:15px; font-family:inherit; border:1px solid var(--border-color); border-radius:6px; color:var(--text-color); background:#fff; outline:none; }
 
 
-/* === 搜索 === */
+/* === 鎼滅储 === */
 .header-search-input { padding:6px 12px; font-size:13px; font-family:inherit; border:1px solid var(--border-color); border-radius:4px; outline:none; width:140px; margin-left:12px; vertical-align:middle; }
 .header-search-input:focus { border-color:#999; }
 .search-input-large { padding:10px 16px; font-size:16px; font-family:inherit; border:1px solid var(--border-color); border-radius:6px 0 0 6px; outline:none; width:300px; vertical-align:middle; }
@@ -578,7 +578,7 @@ body {
 .search-page-header form { display:flex; align-items:center; }
 mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
 
-/* ===== 阅读时间 ===== */
+/* ===== 闃呰鏃堕棿 ===== */
 .reading-time {
   display: inline-block;
   font-size: 0.85em;
@@ -641,7 +641,7 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
   --space-unit: 8px;
   --bg-color: #ffffff;
   --surface-color: #ffffff;
-  --text-color: var(--text-color);
+    --text-color: #111827;
   --text-secondary: #6b6b6b;
   --border-color: #e5e7eb;
   --hover-color: #f5f5f5;
@@ -679,6 +679,18 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
    --text-xl: 24px;
    --text-2xl: 30px;
 }
+  /* === Standardized Design Tokens === */
+    --color-background: var(--bg-color);
+    --color-surface: var(--surface-color);
+    --color-card: var(--surface-color);
+    --color-primary: var(--primary-color);
+    --color-primary-hover: var(--primary-hover);
+    --color-text: var(--text-color);
+    --color-text-secondary: var(--text-secondary);
+    --color-border: var(--border-color);
+    --font-family-base: var(--font-body);
+    --font-family-mono: var(--font-mono);
+    --text-3xl: 36px;
 
 [data-theme='dark'] {
   --bg-color: #111827;
@@ -721,6 +733,13 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
  /* === Design System: Card === */
  .ds-card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: box-shadow var(--transition), transform var(--transition-fast); }
  .ds-card:hover { box-shadow: var(--shadow-md); }
+
+/* === Design System: Container === */
+.ds-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* === Design System: Button Secondary === */
+.ds-btn-secondary { background: transparent; color: var(--text-secondary); border-color: var(--border-color); }
+.ds-btn-secondary:hover { background: var(--hover-color); color: var(--text-color); }
  
  /* === Design System: Input === */
  .ds-input { padding: var(--space-2) var(--space-3); font-size: var(--text-sm); font-family: var(--font-body); border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--surface-color); color: var(--text-color); width: 100%; outline: none; transition: border-color var(--transition-fast); box-sizing: border-box; }
@@ -1118,3 +1137,9 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
  .animate-in{animation:fadeInUp .5s ease both}.animate-in-delay{animation:fadeInUp .5s ease .2s both}
  @media(max-width:768px){.admin-sidebar{width:60px}.admin-sidebar-header{padding:16px 12px;font-size:0}.admin-sidebar-nav a{justify-content:center;padding:12px}.admin-sidebar-nav a span{display:none}.admin-main{margin-left:60px;padding:16px}.admin-stats{grid-template-columns:repeat(2,1fr)}.admin-table{font-size:13px}}
+
+/* === 兼容层: 旧按钮映射到 ds-btn === */
+.btn, .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: var(--space-2) var(--space-4); font-size: var(--text-sm); font-family: var(--font-body); border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--surface-color); color: var(--text-color); cursor: pointer; transition: all var(--transition-fast); gap: var(--space-1); text-decoration: none; line-height: 1; }
+.btn:hover, .btn-primary:hover { background: var(--hover-color); }
+.btn-primary { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+.btn-primary:hover { background: var(--primary-hover); }
