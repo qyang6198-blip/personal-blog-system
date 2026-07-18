@@ -695,6 +695,9 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
     --color-code-background: var(--code-bg);
 
 
+    --header-height: 72px;
+    --header-radius: 18px;
+    --header-blur: 40px;
 }
 [data-theme='dark'] {
   --bg-color: #111827;
