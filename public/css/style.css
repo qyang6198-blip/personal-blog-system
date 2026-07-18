@@ -691,6 +691,8 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
     --font-family-base: var(--font-body);
     --font-family-mono: var(--font-mono);
     --text-3xl: 36px;
+    --color-surface-hover: var(--surface-hover);
+    --color-code-background: var(--code-bg);
 
 
 }
