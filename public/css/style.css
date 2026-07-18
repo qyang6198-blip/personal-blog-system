@@ -698,6 +698,7 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
     --header-height: 72px;
     --header-radius: 18px;
     --header-blur: 40px;
+    --color-code-foreground: var(--code-text);
 }
 [data-theme='dark'] {
   --bg-color: #111827;
@@ -864,12 +865,12 @@ pre { position: relative; }
 /* === Enhanced Code Block === */
 .article-content pre {
   padding: 20px; border-radius: var(--radius-md);
-  background: var(--code-bg);
+  background: var(--color-code-background);
   overflow-x: auto; font-size: 14px; line-height: 1.6;
 }
 .article-content code {
   font-size: 0.9em; padding: 2px 6px;
-  background: var(--code-bg); border-radius: 4px;
+  background: var(--color-code-background); border-radius: 4px;
 }
 .article-content pre code { padding: 0; background: none; font-size: 14px; }
 
@@ -1132,8 +1133,8 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
  .article-content img{max-width:100%;border-radius:8px;margin:1.5em auto;display:block;transition:transform .2s;cursor:pointer}.article-content img:hover{transform:scale(1.01)}
  .article-content ul,.article-content ol{padding-left:1.5em;margin-bottom:1.2em}.article-content li{margin-bottom:.4em}
  .article-content a{color:var(--color-primary)}
- .article-content pre{position:relative;background:var(--code-bg)!important;border-radius:10px;padding:20px;margin:1.5em 0;overflow-x:auto}
- .hljs{background:var(--code-bg)!important;color:var(--code-text)!important}
+ .article-content pre{position:relative;background:var(--color-code-background)!important;border-radius:10px;padding:20px;margin:1.5em 0;overflow-x:auto}
+ .hljs{background:var(--color-code-background)!important;color:var(--color-code-foreground)!important}
  .article-content pre code{font-family:var(--font-mono);font-size:14px;line-height:1.6}
  .copy-btn{position:absolute;top:8px;right:8px;padding:4px 10px;font-size:11px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);border-radius:4px;cursor:pointer;transition:all .15s;font-family:var(--font-body)}
  .copy-btn:hover{background:rgba(255,255,255,0.2);color:#fff}.copy-btn.copied{background:#16a34a;color:#fff;border-color:#16a34a}
