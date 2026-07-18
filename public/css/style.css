@@ -749,6 +749,11 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
  .ds-input { padding: var(--space-2) var(--space-3); font-size: var(--text-sm); font-family: var(--font-body); border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-text); width: 100%; outline: none; transition: border-color var(--transition-fast); box-sizing: border-box; }
  .ds-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
  .ds-input:disabled { opacity: 0.6; cursor: not-allowed; background: var(--color-hover); }
+.ds-btn-success { background: var(--success-color); color: #fff; border-color: var(--success-color); }
+.ds-btn-success:hover { background: #15803d; color: #fff; border-color: #15803d; }
+.ds-btn-warning { background: var(--warning-color); color: #fff; border-color: var(--warning-color); }
+.ds-btn-warning:hover { background: #a16207; color: #fff; border-color: #a16207; }
+
  
  /* === Design System: Modal === */
  .ds-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center; }
@@ -1148,3 +1153,9 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 .btn-primary { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
 .btn-primary:hover { background: var(--color-primary-hover); }
 
+
+/* === 兼容层: 旧按钮映射到 ds-btn === */
+.btn, .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: var(--space-2) var(--space-4); font-size: var(--text-sm); font-family: var(--font-body); border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--surface-color); color: var(--text-color); cursor: pointer; transition: all var(--transition-fast); gap: var(--space-1); text-decoration: none; line-height: 1; }
+.btn:hover, .btn-primary:hover { background: var(--hover-color); }
+.btn-primary { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+.btn-primary:hover { background: var(--primary-hover); }
