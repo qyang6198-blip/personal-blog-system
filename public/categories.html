@@ -10,7 +10,7 @@
 <link rel="canonical" href="/categories.html">
 <link rel="stylesheet" href="/css/style.css"><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
  <script src="/js/theme.js"></script>
- </head><body><header class="header">
+ </head><body class="page-transition"><header class="header">
    <div class="ds-container">
  <a href="/" class="logo">我的博客</a>
  <nav class="nav">
@@ -26,5 +26,5 @@
  <p>Powered by Node.js © 2026</p>
  </div>
  </footer>
- <script>(function(){var h=document.querySelector(".site-header,.header");if(!h)return;function u(){h.classList.toggle("header-scrolled",window.scrollY>50)};window.addEventListener("scroll",u,{passive:true});u()})();(function(){if(!window.IntersectionObserver)return;var els=document.querySelectorAll(".reveal");if(!els.length)return;var obs=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("reveal-active");obs.unobserve(entry.target)}})},{threshold:0.1});els.forEach(function(el){obs.observe(el)})})();lucide.createIcons()</script>
+ <script>(function(){var h=document.querySelector(".site-header,.header");if(!h)return;function u(){h.classList.toggle("header-scrolled",window.scrollY>50)};window.addEventListener("scroll",u,{passive:true});u()})();(function(){if(!window.IntersectionObserver)return;var els=document.querySelectorAll(".reveal");if(!els.length)return;var obs=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("reveal-active");obs.unobserve(entry.target)}})},{threshold:0.1});els.forEach(function(el){obs.observe(el)})})();(function(){var p=location.pathname;document.querySelectorAll(".nav a").forEach(function(a){if(a.getAttribute("href")===p)a.classList.add("active")})})();lucide.createIcons()</script>
  </body></html>
