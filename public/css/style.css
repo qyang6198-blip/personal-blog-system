@@ -625,6 +625,27 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
 }
 
 :root {
+  /* === PathNote Design Tokens (Step1) === */
+  --bg-primary: #f7f5f0;
+  --bg-secondary: #f0ede8;
+  --surface: rgba(255,255,255,0.6);
+  --text-primary: #1a1a1a;
+  --text-secondary: #5c5c5c;
+  --text-muted: #9a9a9a;
+  --accent: #c9a84c;
+  --accent-hover: #e8c96a;
+  --tag-diary: #c9a84c;
+  --tag-learning: #5a7a8a;
+  --tag-experience: #8b7355;
+  --border-light: rgba(0,0,0,0.06);
+  --border-hover: rgba(0,0,0,0.15);
+  --glass-bg: rgba(255,255,255,0.6);
+  --glass-blur: blur(16px);
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+  --radius-card: 18px;
+  --radius-button: 8px;
+  --radius-pill: 20px;
+  --transition: all .3s ease;
   --max-width: 680px;
  --code-bg: #f6f8fa;
    --code-text: #24292e;
@@ -1477,3 +1498,12 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 .article-content img { transition: transform var(--motion-duration-slow) var(--motion-ease-out); }
 .article-content img:hover { transform: scale(1.03); }
 .page-transition { animation: pageEnter var(--motion-duration-normal) var(--motion-ease-out) both; }
+
+/* === PathNote Base (Step1) === */
+body { background: var(--bg-primary); color: var(--text-primary); }
+.font-display { font-family: "Noto Serif SC", serif; }
+.font-body { font-family: "Noto Sans SC", sans-serif; }
+
+/* === Glass Card === */
+.glass-card { background: var(--glass-bg); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft); border-radius: var(--radius-card); transition: var(--transition); }
+.glass-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
