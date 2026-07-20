@@ -660,9 +660,12 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
   --breakpoint-xl: 1280px;
   --focus-ring-color: var(--color-primary);
   --focus-ring-width: 3px;
-  --focus-ring-offset: 2px;
-  --focus-ring-color: var(--color-primary);
-  --focus-ring-width: 3px;
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 250ms;
+  --motion-duration-slow: 400ms;
+  --motion-ease-standard: cubic-bezier(0.2,0.8,0.2,1);
+  --motion-ease-in: cubic-bezier(0.4,0,1,1);
+  --motion-ease-out: cubic-bezier(0,0,0.2,1);
   --focus-ring-offset: 2px;
    --transition-normal: 0.2s ease;
    --transition-slow: 0.35s ease;
@@ -765,8 +768,9 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
  small, .text-small { font-size: var(--text-xs); color: var(--color-text-secondary); }
  
  /* === Design System: Button === */
-.ds-btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--space-2) var(--space-4); font-size: var(--text-sm); font-family: var(--font-body); font-weight: var(--font-weight-medium); border: 1px solid var(--color-border); border-radius: var(--btn-radius); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all var(--btn-transition); gap: var(--space-1); text-decoration: none; line-height: 1; }
- .ds-btn:hover { background: var(--color-hover); }
+.ds-btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--space-2) var(--space-4); font-size: var(--text-sm); font-family: var(--font-body); font-weight: var(--font-weight-medium); border: 1px solid var(--color-border); border-radius: var(--btn-radius); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all var(--motion-duration-fast) var(--motion-ease-standard); gap: var(--space-1); text-decoration: none; line-height: 1; }
+ .ds-btn:hover { background: var(--color-hover); transform: translateY(-1px); }
+.ds-btn:active { transform: translateY(0); }
  .ds-btn-primary { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
  .ds-btn-primary:hover { background: var(--color-primary-hover); }
  .ds-btn-danger { color: var(--danger-color); border-color: #fecaca; }
@@ -792,13 +796,13 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
 .ds-btn-md { padding: var(--space-2) var(--space-4); }
  
  /* === Design System: Card === */
-.ds-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--card-radius); box-shadow: var(--card-shadow); transition: var(--card-transition); overflow: hidden; }
+.ds-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--card-radius); box-shadow: var(--card-shadow); transition: transform var(--motion-duration-normal) var(--motion-ease-out), box-shadow var(--motion-duration-normal) var(--motion-ease-out); overflow: hidden; }
 .ds-card:hover { box-shadow: var(--shadow-lg); }
 .ds-card-header { padding: var(--card-padding); border-bottom: 1px solid var(--color-border); }
 .ds-card-body { padding: var(--card-padding); }
 .ds-card-footer { padding: var(--card-padding); border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-3); }
-.ds-card-hover { transition: var(--card-transition); }
-.ds-card-hover:hover { transform: translateY(-2px); box-shadow: var(--card-shadow-hover); }
+.ds-card-hover { transition: transform var(--motion-duration-normal) var(--motion-ease-out), box-shadow var(--motion-duration-normal) var(--motion-ease-out); }
+.ds-card-hover:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
 
 /* === Design System: Container === */
 .ds-container { max-width: var(--container-max-width); margin: 0 auto; padding: 0 var(--container-padding); }
@@ -1266,7 +1270,7 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 .btn-primary:hover { background: var(--primary-hover); }
 
 /* === Header Design System === */
-.site-header { height: var(--header-height); position: sticky; top: 0; z-index: var(--z-header); background: var(--color-surface); border-bottom: 1px solid var(--color-border); transition: var(--header-transition); }
+.site-header { height: var(--header-height); position: sticky; top: 0; z-index: var(--z-header); background: var(--color-surface); border-bottom: 1px solid var(--color-border); transition: background var(--motion-duration-normal) var(--motion-ease-out), box-shadow var(--motion-duration-normal) var(--motion-ease-out), transform var(--motion-duration-normal) var(--motion-ease-out); }
 [data-theme=dark] .site-header { border-bottom-color: rgba(255,255,255,0.06); }
 .site-header.is-morphed { border-radius: var(--header-radius); backdrop-filter: blur(var(--header-blur)) saturate(180%); -webkit-backdrop-filter: blur(var(--header-blur)) saturate(180%); box-shadow: var(--header-shadow); background: rgba(255,255,255,0.65); }
 [data-theme=dark] .site-header.is-morphed { background: rgba(15,23,42,0.65); }
@@ -1313,3 +1317,23 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
     scroll-behavior: auto !important;
   }
 }
+
+/* === Motion Design System === */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+.fade-in { animation: fadeIn var(--motion-duration-normal) var(--motion-ease-out); }
+.slide-up { animation: slideUp var(--motion-duration-normal) var(--motion-ease-out); }
+.scale-in { animation: scaleIn var(--motion-duration-normal) var(--motion-ease-out); }
+
+/* === Toast Motion === */
+.toast-enter { animation: slideUp var(--motion-duration-normal) var(--motion-ease-out); }
+.toast-exit { animation: fadeIn var(--motion-duration-fast) var(--motion-ease-in) reverse; }
+
+/* === Modal Motion === */
+.modal-enter { animation: scaleIn var(--motion-duration-normal) var(--motion-ease-out); }
+.ds-modal-overlay.modal-enter { opacity: 1; visibility: visible; }
+
+/* === Loading Animation === */
+@keyframes spin { to { transform: rotate(360deg); } }
+.ds-loading { animation: spin var(--motion-duration-slow) linear infinite; }
