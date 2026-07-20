@@ -335,16 +335,6 @@ body {
   background: #333;
 }
 
-.btn-secondary {
-  background: var(--color-surface);
-  color: var(--color-text-secondary);
-}
-
-.btn-secondary:hover {
-  background: var(--color-hover);
-  color: var(--color-text);
-}
-
 /* 鎻愮ず娑堟伅 */
 .form-error {
   color: #c0392b;
@@ -621,18 +611,6 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
   background: var(--color-surface)3e0;
   color: #e65100;
 }
-.btn-publish {
-  background: #2e7d32 !important;
-  color: white !important;
-}
-.btn-draft {
-  background: #e65100 !important;
-  color: white !important;
-}
-.admin-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
   margin-bottom: 24px;
 }
 .stat-card {
@@ -640,16 +618,6 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
   padding: 16px;
   border-radius: 8px;
   text-align: center;
-}
-.stat-card .stat-number {
-  font-size: 1.8em;
-  font-weight: 700;
-  display: block;
-}
-.stat-card .stat-label {
-  font-size: 0.8em;
-  color: var(--color-text-secondary);
-  margin-top: 4px;
 }
 
 :root {
