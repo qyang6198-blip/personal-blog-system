@@ -1055,7 +1055,7 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 
 /* === Responsive === */
 @media (max-width: 768px) {
-  .article-content { font-size: 16px; }
+  .article-content { font-size: var(--text-base); }
   .article-content h2 { font-size: 22px; margin-top: 36px; }
   .article-content h3 { font-size: 18px; margin-top: 24px; }
   .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
@@ -1207,6 +1207,8 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
  .empty-state p{color:var(--color-text-secondary);margin:0}
  .tag,.home-tag-badge{color:var(--color-text-secondary);font-size:12px;text-decoration:none;transition:color var(--transition-fast)}
  .tag:hover{color:var(--color-primary)}
+.ds-meta { display: flex; flex-wrap: wrap; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-text-secondary); }
+.ds-badge { display: inline-block; padding: 2px 8px; font-size: var(--text-xs); color: var(--color-text-secondary); background: var(--color-hover); border-radius: var(--radius-sm); }
  @media(max-width:640px){.hero{padding:48px 0 32px}.hero-title{font-size:28px}.hero-subtitle{font-size:16px}.articles{grid-template-columns:1fr}.skeleton-grid{grid-template-columns:1fr}.section{padding:32px 0}}
  /* === Article Page (Step 22.3) === */
  .article-layout{display:flex;gap:40px;align-items:flex-start}
@@ -1215,14 +1217,14 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
  .article-hero{margin-bottom:40px;animation:fadeInUp .5s ease both}
  .article-hero-category{margin-bottom:12px}
  .article-hero-category a{display:inline-block;padding:4px 12px;font-size:12px;font-weight:500;color:var(--color-primary);background:rgba(37,99,235,0.08);border-radius:20px;text-decoration:none}
- .article-hero-title{font-size:36px;font-weight:700;line-height:1.25;margin:0 0 16px;color:var(--color-text)}
+.article-hero-title{font-size:var(--text-3xl);font-weight:var(--font-weight-bold);line-height:1.25;margin:0 0 16px;color:var(--color-text)}
  .article-hero-summary{font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0 0 20px;max-width:640px}
  .article-hero-meta{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--color-text-secondary);margin-bottom:16px;flex-wrap:wrap}
  .article-hero-meta .meta-dot{color:var(--color-border)}
  .article-hero-tags{display:flex;gap:6px;flex-wrap:wrap}
- .article-content{max-width:760px;font-size:16px;line-height:1.8;color:var(--color-text);animation:fadeInUp .5s ease .2s both}
+.article-content{max-width:760px;font-size:var(--text-base);line-height:var(--line-height-relaxed);color:var(--color-text);animation:fadeInUp .5s ease .2s both}
  .article-content h1,.article-content h2,.article-content h3{margin-top:1.8em;margin-bottom:.6em;line-height:1.35}
- .article-content h1{font-size:28px}.article-content h2{font-size:22px;border-bottom:1px solid var(--color-border);padding-bottom:8px}.article-content h3{font-size:18px}
+ .article-content h1{font-size:28px}.article-content h2{font-size:22px;border-bottom:1px solid var(--color-border);padding-bottom:8px}.article-content h3{font-size:var(--text-lg)}
  .article-content p{margin-bottom:1.2em}
  .article-content blockquote{border-left:3px solid var(--color-primary);padding:12px 20px;margin:1.5em 0;background:var(--color-hover);border-radius:0 8px 8px 0;color:var(--color-text-secondary)}
  .article-content table{width:100%;border-collapse:collapse;margin:1.5em 0}
