@@ -654,6 +654,10 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
    --space-5: 32px;
    --space-6: 48px;
    --transition-fast: 0.12s ease;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
    --transition-normal: 0.2s ease;
    --transition-slow: 0.35s ease;
    --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
@@ -1261,3 +1265,22 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 
 
 
+
+
+/* === Responsive Design System === */
+@media (max-width: 640px) {
+  .container,
+  .ds-container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+  .ds-card {
+    padding: var(--space-4);
+  }
+  .text-display-xl {
+    font-size: 36px;
+  }
+  .text-display-lg {
+    font-size: 28px;
+  }
+}
