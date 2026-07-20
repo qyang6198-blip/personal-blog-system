@@ -79,8 +79,9 @@ body {
 
 /* === 椤甸潰鏍囬 === */
 .page-title {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
   margin: calc(var(--space-unit) * 6) 0 calc(var(--space-unit) * 4);
   letter-spacing: -0.5px;
 }
