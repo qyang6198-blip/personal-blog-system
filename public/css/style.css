@@ -79,7 +79,7 @@ body {
 
 /* === 椤甸潰鏍囬 === */
 .page-title {
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin: calc(var(--space-unit) * 6) 0 calc(var(--space-unit) * 4);
@@ -156,8 +156,9 @@ body {
 /* === 鍝嶅簲寮?=== */
 @media (max-width: 640px) {
   .page-title {
-    font-size: 24px;
-    margin-top: calc(var(--space-unit) * 4);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
   }
 
   .article-card h2 {
