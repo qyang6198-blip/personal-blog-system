@@ -48,7 +48,7 @@ body {
   padding: calc(var(--space-unit) * 3) 0;
 }
 
-.header .container {
+.header .container, .header .ds-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1167,12 +1167,12 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
  /* === Homepage (Step 22.2) === */
  .hero{padding:80px 0 60px;text-align:center}
  .hero-content{max-width:640px;margin:0 auto}
- .hero-title{font-size:36px;font-weight:700;margin:0 0 16px;line-height:1.2}
- .hero-subtitle{font-size:18px;color:var(--color-text-secondary);margin:0 0 32px;line-height:1.5}
+.hero-title{font-size:var(--text-3xl);font-weight:var(--font-weight-bold);margin:0 0 16px;line-height:var(--line-height-tight)}
+.hero-subtitle{font-size:var(--text-lg);color:var(--color-text-secondary);margin:0 0 32px;line-height:var(--line-height-normal)}
  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
  .section{padding:48px 0}
  .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
- .section-header h2{font-size:22px;font-weight:600;margin:0}
+.section-header h2{font-size:22px;font-weight:var(--font-weight-semibold);margin:0}
  .featured-card{padding:32px;border-radius:var(--radius-lg);margin-bottom:8px}
  .featured-meta{display:flex;gap:12px;align-items:center;font-size:14px;color:var(--color-text-secondary);margin-bottom:12px;flex-wrap:wrap}
  .featured-category{color:var(--color-primary);font-weight:500}
