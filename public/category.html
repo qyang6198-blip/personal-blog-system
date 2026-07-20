@@ -26,5 +26,5 @@
  <p>Powered by Node.js © 2026</p>
  </div>
  </footer>
- <script>(function(){var h=document.querySelector(".site-header,.header");if(!h)return;function u(){h.classList.toggle("header-scrolled",window.scrollY>50)};window.addEventListener("scroll",u,{passive:true});u()})();lucide.createIcons()</script>
+ <script>(function(){var h=document.querySelector(".site-header,.header");if(!h)return;function u(){h.classList.toggle("header-scrolled",window.scrollY>50)};window.addEventListener("scroll",u,{passive:true});u()})();(function(){if(!window.IntersectionObserver)return;var els=document.querySelectorAll(".reveal");if(!els.length)return;var obs=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("reveal-active");obs.unobserve(entry.target)}})},{threshold:0.1});els.forEach(function(el){obs.observe(el)})})();lucide.createIcons()</script>
  </body></html>
