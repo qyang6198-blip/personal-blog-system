@@ -658,6 +658,12 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
+  --focus-ring-color: var(--color-primary);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-primary);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
    --transition-normal: 0.2s ease;
    --transition-slow: 0.35s ease;
    --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
@@ -769,8 +775,20 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
  .ds-btn-ghost:hover { background: var(--color-hover); }
  .ds-btn-sm { padding: var(--space-1) var(--space-2); font-size: var(--text-xs); }
  .ds-btn-lg { padding: var(--space-3) var(--space-5); font-size: var(--text-base); }
-.ds-btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.ds-btn:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); }
 .ds-btn:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+/* === Focus System === */
+.ds-input:focus-visible,
+.ds-textarea:focus-visible,
+.ds-select:focus-visible,
+.ds-nav-item:focus-visible,
+.ds-sidebar-item:focus-visible,
+.ds-card:focus-visible,
+.ds-toast:focus-visible,
+.ds-alert:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
 .ds-btn-md { padding: var(--space-2) var(--space-4); }
  
  /* === Design System: Card === */
@@ -1282,5 +1300,16 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
   }
   .text-display-lg {
     font-size: 28px;
+  }
+}
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
