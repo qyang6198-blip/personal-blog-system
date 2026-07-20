@@ -705,12 +705,16 @@ mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
     --btn-height-lg: 48px;
     --btn-radius: var(--radius-md);
     --btn-transition: var(--transition-normal);
-}
     --card-radius: var(--radius-lg);
     --card-padding: var(--space-5);
     --card-shadow: var(--shadow-md);
     --card-shadow-hover: var(--shadow-lg);
     --card-transition: var(--transition-normal);
+    --z-header: 1000;
+    --header-shadow: var(--shadow-sm);
+    --header-transition: var(--transition-normal);
+    --nav-gap: 8px;
+}
 [data-theme='dark'] {
   --bg-color: #111827;
  --code-bg: #111827;
@@ -1182,3 +1186,16 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 .btn:hover, .btn-primary:hover { background: var(--hover-color); }
 .btn-primary { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
 .btn-primary:hover { background: var(--primary-hover); }
+
+/* === Header Design System === */
+.site-header { height: var(--header-height); position: sticky; top: 0; z-index: var(--z-header); background: var(--color-surface); border-bottom: 1px solid var(--color-border); transition: var(--header-transition); }
+[data-theme=dark] .site-header { border-bottom-color: rgba(255,255,255,0.06); }
+.site-header.is-morphed { border-radius: var(--header-radius); backdrop-filter: blur(var(--header-blur)) saturate(180%); -webkit-backdrop-filter: blur(var(--header-blur)) saturate(180%); box-shadow: var(--header-shadow); background: rgba(255,255,255,0.65); }
+[data-theme=dark] .site-header.is-morphed { background: rgba(15,23,42,0.65); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: 0 var(--space-6); }
+.header-logo { font-size: var(--text-xl); font-weight: var(--font-weight-bold); color: var(--color-text); text-decoration: none; white-space: nowrap; }
+.header-logo:hover { color: var(--color-primary); }
+.header-nav { display: flex; align-items: center; gap: var(--nav-gap); }
+.header-nav-item { color: var(--color-text-secondary); text-decoration: none; font-size: var(--text-sm); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); transition: var(--header-transition); white-space: nowrap; }
+.header-nav-item:hover { color: var(--color-primary); }
+.header-nav-item.active { color: var(--color-primary); font-weight: var(--font-weight-medium); }
