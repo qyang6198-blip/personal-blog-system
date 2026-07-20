@@ -1,4 +1,4 @@
-﻿ var Editor = {}
+ var Editor = {}
  Editor.init = function(container) {
    Editor.container = container
    Editor.createToolbar()

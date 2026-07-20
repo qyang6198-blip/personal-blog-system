@@ -1,4 +1,4 @@
-﻿ // == Category Management ==
+ // == Category Management ==
  (function(){
    function injectNav(){
      var nav=document.getElementById("admin-nav");if(!nav||document.getElementById("nav-categories"))return
