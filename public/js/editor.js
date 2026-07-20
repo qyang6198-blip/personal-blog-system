@@ -1,4 +1,4 @@
- var Editor = {}
+﻿ var Editor = {}
  Editor.init = function(container) {
    Editor.container = container
    Editor.createToolbar()
@@ -52,11 +52,11 @@
    var modal = document.createElement("div"); modal.className = "editor-media-modal"
    var hdr = document.createElement("div"); hdr.className = "editor-media-header"
    var ht = document.createElement("h3"); ht.textContent = "选择图片"
-   var hc = document.createElement("button"); hc.className = "admin-btn admin-btn-sm"; hc.textContent = "关闭"; hc.addEventListener("click", function(){overlay.style.display="none"})
+   var hc = document.createElement("button"); hc.className = "admin-btn admin-btn-sm ds-btn ds-btn-sm"; hc.textContent = "关闭"; hc.addEventListener("click", function(){overlay.style.display="none"})
    hdr.appendChild(ht); hdr.appendChild(hc)
    var grid = document.createElement("div"); grid.id = "editor-media-grid"; grid.className = "editor-media-grid"
    var up = document.createElement("div"); up.className = "editor-media-upload"
-   var ub = document.createElement("button"); ub.className = "admin-btn admin-btn-sm"; ub.id = "editor-media-upload-btn"
+   var ub = document.createElement("button"); ub.className = "admin-btn admin-btn-sm ds-btn ds-btn-sm"; ub.id = "editor-media-upload-btn"
    ub.textContent = "上传新图片"
    var us = document.createElement("span"); us.id = "editor-media-upload-status"
    up.appendChild(ub); up.appendChild(us)
