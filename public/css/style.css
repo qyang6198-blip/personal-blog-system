@@ -589,6 +589,11 @@ body {
 .search-page-header form { display:flex; align-items:center; }
 mark { background:#fff3cd; padding:0 2px; border-radius:2px; color:inherit; }
 
+/* === Search Result Cards === */
+#search-results .ds-card { padding: 16px; margin-bottom: 12px; }
+#search-results .ds-card h3 { font-size: var(--text-lg); font-weight: var(--font-weight-semibold); margin: 0 0 var(--space-1); color: var(--color-text); }
+#search-results .ds-card p { font-size: var(--text-sm); line-height: var(--line-height-normal); color: var(--color-text-secondary); margin: 0; }
+
 /* ===== 闃呰鏃堕棿 ===== */
 .reading-time {
   display: inline-block;

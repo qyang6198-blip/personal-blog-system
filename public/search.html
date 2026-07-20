@@ -1,4 +1,4 @@
- <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>搜索 - 我的博客</title><link rel="stylesheet" href="/css/style.css"><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+﻿ <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>搜索 - 我的博客</title><link rel="stylesheet" href="/css/style.css"><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script src="/js/theme.js"></script>
 </head><body><header class="header">
   <div class="container">
@@ -11,7 +11,7 @@
 <a href="/admin.html"><i data-lucide="settings" style="width:16px;height:16px"></i> 管理</a>
 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"><i data-lucide="moon"></i></button></nav>
   </div>
-</header><main class="main"><div class="container"><div class="search-page-header"><form onsubmit="event.preventDefault();var v=document.getElementById('sq').value.trim();if(v)window.location.href='/search.html?q='+encodeURIComponent(v)"><input type="text" id="sq" class="search-input-large" placeholder="搜索文章..." value=""><button type="submit" class="btn btn-primary search-btn">搜索</button></form></div><h1 id="search-title" class="page-title">搜索结果</h1><div id="search-results" class="articles"><p class="loading">搜索中...</p></div></div></main><script src="/js/search.js"></script><footer class="footer">
+</header><main class="main"><div class="container"><div class="search-page-header"><form onsubmit="event.preventDefault();var v=document.getElementById('sq').value.trim();if(v)window.location.href='/search.html?q='+encodeURIComponent(v)"><input type="text" id="sq" class="search-input-large ds-input" placeholder="搜索文章..." value=""><button type="submit" class="ds-btn ds-btn-primary search-btn">搜索</button></form></div><h1 id="search-title" class="page-title">搜索结果</h1><div id="search-results" class="articles"><p class="loading">搜索中...</p></div></div></main><script src="/js/search.js"></script><footer class="footer">
   <div class="container">
 <p>Powered by Node.js © 2026</p>
 </div>
