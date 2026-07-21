@@ -15,6 +15,9 @@ function formatArticleTags(article) {
 
 function getArticles(req, res) {
   var cacheKey = "articles:" + req.query.page + ":" + req.query.limit + ":" + req.query.status
+  if (req.query.category) {
+    cacheKey += ":" + req.query.category
+  }
   var cached = cache.get(cacheKey)
   if (cached) { return res.json({ success: true, data: cached }) }
   var page = Number(req.query.page) || 1
@@ -33,8 +36,10 @@ function getArticles(req, res) {
   if (isAdmin && req.query.status) {
     status = req.query.status
   }
+  var category = req.query.category || null
+  console.log("controller category =", category)
 
-  var result = Article.getArticlesPaginated({ page: page, limit: limit, status: status })
+  var result = Article.getArticlesPaginated({ page: page, limit: limit, status: status, category: category })
     if (result.articles) result.articles.forEach(function(a){formatArticleTags(a); if(a.category_id){a.category=Article.getArticleCategory(a.id)}})
   cache.set(cacheKey, result)
   res.json({ success: true, data: result })
@@ -144,6 +149,7 @@ function createArticle(req, res) {
 function deleteArticle(req, res) {
   cache.clearByPrefix("articles:")
   cache.clearByPrefix("tags")
+  cache.clearByPrefix("search:")
   const id = Number(req.params.id)
   Search.removeArticle(id)
   var deleted = Article.deleteArticle(id)

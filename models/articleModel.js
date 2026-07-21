@@ -72,13 +72,26 @@ function createArticle(article) {
  * 输出：布尔值，true 表示删除了记录，false 表示没找到
  */
 function deleteArticle(id) {
-  // 先删除关联表数据（article_tags 有外键约束）
-  db.prepare('DELETE FROM article_tags WHERE article_id = ?').run(id)
-  db.prepare('DELETE FROM visits WHERE article_id = ?').run(id)
-  const stmt = db.prepare('DELETE FROM articles WHERE id = ?')
-  const result = stmt.run(id)
-  // changes 属性返回受影响的行数
-  return result.changes > 0
+  // 事务保护：确保关联表删除与主表删除原子操作
+  // 外键关联表（按删除顺序）：
+  //   article_tags     — FOREIGN KEY (article_id) REFERENCES articles(id)
+  //   article_versions — FOREIGN KEY (article_id) REFERENCES articles(id)
+  //   visits           — 无外键约束，但有 article_id 关联
+  try {
+    db.exec('BEGIN')
+    db.prepare('DELETE FROM article_tags WHERE article_id = ?').run(id)
+    db.prepare('DELETE FROM article_versions WHERE article_id = ?').run(id)
+    db.prepare('DELETE FROM visits WHERE article_id = ?').run(id)
+    const stmt = db.prepare('DELETE FROM articles WHERE id = ?')
+    const result = stmt.run(id)
+      // Clean up isolated tags (no longer associated with any article)
+      db.prepare('DELETE FROM tags WHERE id NOT IN (SELECT tag_id FROM article_tags)').run()
+    db.exec('COMMIT')
+    return result.changes > 0
+  } catch (e) {
+    db.exec('ROLLBACK')
+    throw e
+  }
 }
 
 
@@ -105,25 +118,67 @@ function getPublishedArticles() {
  * 输出：{ articles, total, page, limit, totalPages }
  */
 function getArticlesPaginated(params) {
+  console.log("=== NEW getArticlesPaginated RUN ===")
   var page = params.page || 1
   var limit = params.limit || 10
   var status = params.status || "published"
+  var category = params.category || null
+  console.log("category =", category)
   var offset = (page - 1) * limit
 
-  // 白名单校验：防止 SQL 注入
   var allowed = ["published", "draft", "all"]
-  if (allowed.indexOf(status) === -1) status = "published"
-
-  var whereClause = ""
-  if (status !== "all") {
-    whereClause = " WHERE status = '" + status + "'"
+  if (allowed.indexOf(status) === -1) {
+    status = "published"
   }
 
-  var stmt = db.prepare(
-    "SELECT * FROM articles" + whereClause + " ORDER BY created_at DESC LIMIT ? OFFSET ?"
-  )
-  var articles = stmt.all(limit, offset)
-  var total = countArticles({ status: status })
+  var whereClause = ""
+  var queryParams = []
+
+  if (status !== "all") {
+    whereClause = " WHERE articles.status = ?"
+    queryParams.push(status)
+  }
+
+  if (category) {
+
+    console.log("进入分类查询")
+    
+    whereClause += whereClause
+      ? " AND categories.slug = ?"
+      : " WHERE categories.slug = ?"
+
+    queryParams.push(category)
+  }
+
+  console.log("SQL WHERE:", whereClause)
+  console.log("SQL PARAMS:", queryParams)
+
+
+  var sql = `
+    SELECT articles.*
+    FROM articles
+    LEFT JOIN categories
+    ON articles.category_id = categories.id
+    ${whereClause}
+    ORDER BY articles.created_at DESC
+    LIMIT ? OFFSET ?
+  `
+
+
+  queryParams.push(limit)
+  queryParams.push(offset)
+
+
+  var stmt = db.prepare(sql)
+
+  var articles = stmt.all(...queryParams)
+
+
+  var total = countArticles({
+    status: status,
+    category: category
+  })
+
 
   return {
     articles: articles,
@@ -142,18 +197,28 @@ function getArticlesPaginated(params) {
  */
 function countArticles(params) {
   var status = params.status || "all"
+  var category = params.category || null
   var allowed = ["published", "draft", "all"]
   if (allowed.indexOf(status) === -1) status = "all"
 
   var whereClause = ""
+  var queryParams = []
   if (status !== "all") {
-    whereClause = " WHERE status = '" + status + "'"
+    whereClause = " WHERE articles.status = ?"
+    queryParams.push(status)
+  }
+
+  if (category) {
+    whereClause += whereClause
+      ? " AND categories.slug = ?"
+      : " WHERE categories.slug = ?"
+    queryParams.push(category)
   }
 
   var stmt = db.prepare(
-    "SELECT COUNT(*) AS count FROM articles" + whereClause
+    "SELECT COUNT(*) AS count FROM articles LEFT JOIN categories ON articles.category_id = categories.id" + whereClause
   )
-  return stmt.get().count
+  return stmt.get(...queryParams).count
 }
 function updateArticleStatus(id, status) {
   var stmt = db.prepare(
