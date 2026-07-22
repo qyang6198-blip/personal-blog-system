@@ -1492,7 +1492,7 @@ body { background: var(--bg-primary); color: var(--text-primary); }
 
 /* === Category Grid (Step3) === */
 #category-list .tags-cloud { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cat-badge.ds-badge { background: var(--glass-bg) !important; backdrop-filter: blur(16px) saturate(180%) !important; -webkit-backdrop-filter: blur(16px) saturate(180%) !important; border: 1px solid var(--border-light) !important; border-radius: var(--radius-card) !important; box-shadow: var(--shadow-soft) !important; transition: var(--transition) !important; padding: 24px !important; display: flex !important; flex-direction: column; gap: 6px; min-height: 160px; text-decoration: none; color: var(--text-primary); }
+.cat-badge.ds-badge { background: var(--glass-bg) !important; backdrop-filter: blur(16px) saturate(180%) !important; -webkit-backdrop-filter: blur(16px) saturate(180%) !important; border: 1px solid var(--border-light) !important; border-radius: 20px !important; box-shadow: var(--shadow-soft) !important; transition: var(--transition) !important; padding: 24px !important; display: flex !important; flex-direction: column; gap: 6px; min-height: 160px; text-decoration: none; color: var(--text-primary); }
 .cat-badge.ds-badge:hover { border-color: var(--border-hover) !important; transform: translateY(-2px) !important; }
 .cat-badge.ds-badge .tag-count { color: var(--text-muted); font-size: 13px; }
 .cat-badge.ds-badge:hover .tag-count { color: var(--text-muted); }
