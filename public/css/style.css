@@ -1447,9 +1447,9 @@ h2:hover .heading-anchor, h3:hover .heading-anchor { opacity: 1; }
 .tag-item, .cat-badge { transition: transform var(--motion-duration-fast) var(--motion-ease-out); }
 .tag-item:hover, .cat-badge:hover { transform: scale(1.05); }
 
-.reveal { opacity: 0; transform: translateY(20px);
+.reveal { opacity: 0; translate: 0 20px;
   transition: opacity var(--motion-duration-normal) var(--motion-ease-out), transform var(--motion-duration-normal) var(--motion-ease-out); }
-.reveal-active { opacity: 1; transform: none; }
+.reveal-active { opacity: 1; translate: 0; }
 
 @media (max-width: 640px) {
   .hero .ds-container { flex-direction: column; text-align: center; }
